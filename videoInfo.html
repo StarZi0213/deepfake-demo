@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .parent {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+  }
+
+  .child {
+    box-sizing: border-box;
+    background-color: white;
+    flex: 0 0 33%;
+    height: 50px;
+    border: 1px solid red;
+  }
+  /*.content {*/
+  /*    overflow: hidden;  !*清除浮动*!*/
+
+  /*}*/
+
+  .box1 {
+    width: 100px;
+    height: 200px;
+    background-color: black;
+    float: left;
+
+  }
+
+  .box2 {
+    width: 100px;
+    height: 200px;
+    background-color: black;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .box3 {
+    width: 100px;
+    height: 200px;
+    background-color: black;
+    float: right;
+  }
+  .first {
+    width: 50%;
+    float:left;
+    height: 500px;
+    /*padding-right: 30px;*/
+    padding-left: 30px;
+    /*border: 1px solid #3B6273;*/
+  }
+  .second {
+    width: 50%;
+    float:left;
+    height: 500px;
+    padding-right: 120px;
+    /*padding-left: 30px;*/
+    /*border: 1px solid #3B6273;*/
+  }
+  .box {
+    height: 500px;
+    width: 100%;
+    text-align:center;//水平居中
+  line-height:100px;//跟高度一样
+  }
+  .button-div{
+    margin: 30% auto;
+    width: 90%;
+  }
+  .p-white-normal{
+    color: white;
+    font-size: 14px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .titleDiv {
+    /* Select this scene? */
+
+    position: absolute;
+    left: 4.1%;
+    right: 57.22%;
+    top: 30.47%;
+    bottom: 62.7%;
+  }
+  .title{
+    /*position: absolute;*/
+    font-weight: 400;
+    font-size: 67.77px;
+    line-height: 70px;
+    /* identical to box height, or 103% */
+    letter-spacing: -0.015em;
+
+    color: #010101;
+  }
+  .contextDIV {
+    /* Winonna Ryder: Edward Scissorhands 1990 */
+
+    position: absolute;
+    left: 4.44%;
+    right: 56.88%;
+    top: 39.55%;
+    bottom: 55.37%;
+  }
+  .context {
+    position: absolute;
+    font-weight: 400;
+    font-size: 25.89px;
+    line-height: 26px;
+    /* or 100% */
+    letter-spacing: -0.015em;
+    color: #010101;
+  }
+
+  .videoBox{
+    /*box-sizing: border-box;*/
+    position: absolute;
+    width: 672px;
+    height: 400px;
+    left: 704px;
+    top: 312px;
+    background: #EEEEEE;
+    border: 2px solid #D5D5D5;
+    border-radius: 20px;
+  }
+
+</style>
+<body style="background-color: White">
+<!--Navigator-->
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="height: 100px; background-color: black">
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand" style="font-size: 20px;color: white;padding-left: 30px;padding-top: 5px">A RESEARCH PROJECT<br> CONDUCTED BY UTS</a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto ">
+
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a href="index.html" class="nav-item nav-link" style="color: gray;font-size: 30px">HOME</a>
+        <a href="about.html" class="nav-item nav-link active" style="color: white;font-size: 30px">ABOUT</a>
+        <a href="#" class="nav-item nav-link" style="color: gray;font-size: 30px">CASE STUDY</a>
+        <a href="#" class="nav-item nav-link" style="color: gray;font-size: 30px">FILM DATABASE</a>
+        <button type="button" class="btn btn-outline-light rounded-pill" style="color: gray;font-size: 30px;width: 200px">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="titleDiv">
+  <h1 class="title">
+    Select this scene?
+  </h1>
+</div>
+<div class="contextDIV">
+  <h1 class="context">
+    Winonna Ryder: Edward Scissorhands 1990
+  </h1>
+</div>
+
+<div class="videoBox" style="margin-left: 20%">
+
+</div>
+
+<div class="button-div">
+  <button type="button" class="btn btn-dark btn-outline-light rounded-pill" style="font-size: 35px;width: 280px;margin-right: 30px" data-bs-toggle="modal" data-bs-target="#myModal">YES</button>
+  <button type="button" class="btn btn-outline-dark rounded-pill" style="font-size: 35px;width: 280px;margin-left: 30px">NO</button></body>
+</div>
+</html>

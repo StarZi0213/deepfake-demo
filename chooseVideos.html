@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .parent {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+    }
+
+    .child {
+        box-sizing: border-box;
+        background-color: white;
+        flex: 0 0 33%;
+        height: 100px;
+        border: 1px solid red;
+    }
+    /*.content {*/
+    /*    overflow: hidden;  !*清除浮动*!*/
+
+    /*}*/
+
+    .box1 {
+        width: 100px;
+        height: 200px;
+        background-color: black;
+        float: left;
+
+    }
+
+    .box2 {
+        width: 100px;
+        height: 200px;
+        background-color: black;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .box3 {
+        width: 100px;
+        height: 200px;
+        background-color: black;
+        float: right;
+    }
+    .first {
+        width: 50%;
+        float:left;
+        height: 500px;
+        /*padding-right: 30px;*/
+        padding-left: 30px;
+        /*border: 1px solid #3B6273;*/
+    }
+    .second {
+        width: 50%;
+        float:left;
+        height: 500px;
+        padding-right: 120px;
+        /*padding-left: 30px;*/
+        /*border: 1px solid #3B6273;*/
+    }
+    .box {
+        height: 500px;
+        width: 100%;
+        text-align:center;//水平居中
+    line-height:100px;//跟高度一样
+    }
+    .central-div{
+        margin: 20% auto;
+        width: 90%;
+    }
+    .p-white-normal{
+        color: white;
+        font-size: 14px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    :root {
+        --gutter: 20px;
+    }
+
+    .app {
+        padding: var(--gutter) 0;
+        display: grid;
+        grid-gap: var(--gutter) 0;
+        grid-template-columns: var(--gutter) 1fr var(--gutter);
+        align-content: start;
+    }
+
+    .app > * {
+        grid-column: 2 / -2;
+    }
+
+    .app > .full {
+        grid-column: 1 / -1;
+    }
+
+    .hs {
+        display: grid;
+        grid-gap: calc(var(--gutter) / 2);
+        grid-template-columns: 10px;
+        grid-template-rows: minmax(350px, 1fr);
+        grid-auto-flow: column;
+        grid-auto-columns: calc(50% - var(--gutter) * 2);
+
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        padding-bottom: calc(.75 * var(--gutter));
+        margin-bottom: calc(-.25 * var(--gutter));
+    }
+
+    .hs:before,
+    .hs:after {
+        content: '';
+        width: 10px;
+    }
+
+
+    /* Demo styles */
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: grid;
+        place-items: center;
+        background: #456173;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    .app {
+        padding-top:5%;
+        width: 100%;
+        /*height: 100%;*/
+        background: #ffffff;
+        overflow-y: scroll;
+    }
+
+    .hs > li,
+    .item {
+        scroll-snap-align: center;
+        padding: calc(var(--gutter) / 2 * 1.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #eae9e9;
+        border-radius: 8px;
+    }
+
+
+
+    .no-scrollbar {
+        scrollbar-width: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+</style>
+<body style="background-color: White">
+<!--Navigator-->
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="height: 100px; background-color: black">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand" style="font-size: 20px;color: white;padding-left: 30px;padding-top: 5px">A RESEARCH PROJECT<br> CONDUCTED BY UTS</a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto ">
+
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="index.html" class="nav-item nav-link" style="color: gray;font-size: 30px">HOME</a>
+                <a href="about.html" class="nav-item nav-link active" style="color: white;font-size: 30px">ABOUT</a>
+                <a href="#" class="nav-item nav-link" style="color: gray;font-size: 30px">CASE STUDY</a>
+                <a href="#" class="nav-item nav-link" style="color: gray;font-size: 30px">FILM DATABASE</a>
+                <button type="button" class="btn btn-outline-light rounded-pill" style="color: gray;font-size: 30px;width: 200px">LOGIN</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="app">
+    <div style="display: flex;justify-content: center;">
+        <h1 style="align-content: center;font-size: 75px;color: #1a1e21">
+            CHOOSING FILM / FAMOUS FIGURE / GENRE
+        </h1>
+    </div>
+
+    <ul class="hs full">
+        <li class="item">test</li>
+        <li class="item">test</li>
+        <li class="item">test</li>
+        <li class="item">test</li>
+        <li class="item">test</li>
+        <li class="item">test</li>
+    </ul>
+
+    <ul class="hs full">
+        <li class="item">test</li>
+        <li class="item">test</li>
+        <li class="item">test</li>
+        <li class="item">test</li>
+    </ul>
+
+</div>
+
+
+
+
+
+</body>
+</html>
